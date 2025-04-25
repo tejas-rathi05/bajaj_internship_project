@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { Suspense, useMemo, useState } from 'react';
 import {
     filterDoctorsByName,
     filterDoctorsByConsultation,
@@ -72,7 +72,9 @@ export default function Home() {
         <div className="min-h-screen bg-gray-100">
             <header className="bg-blue-800 py-4">
                 <div className="w-full mx-auto px-4">
+                  <Suspense>
                     <AutocompleteSearch doctors={doctors} onSearchChange={handleSearchChange} />
+                    </Suspense>
                 </div>                
             </header>
 
