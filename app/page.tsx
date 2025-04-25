@@ -16,6 +16,15 @@ import { Doctor } from "@/types/doctor";
 import { useQuery } from "@tanstack/react-query";
 
 export default function Home() {
+  // Move the useSearchParams hook inside Suspense for client-side rendering
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
+  );
+}
+
+function HomeContent() {
   const searchParams = useSearchParams();
 
   const [filters, setFilters] = useState({
