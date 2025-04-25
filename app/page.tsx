@@ -5,25 +5,24 @@ import {
     filterDoctorsByName,
     filterDoctorsByConsultation,
     sortDoctors,
-    filterDoctorsBySpecialty // Import the specialty filter
+    filterDoctorsBySpecialty
 } from '@/utils/filterUtils';
 import AutocompleteSearch from '@/components/AutocompleteSearch';
 import FilterPanel from '@/components/FilterPanel';
 import DoctorList from '@/components/DoctorList';
 import { fetchDoctors } from '@/services/api';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { Doctor } from '@/types/doctor';
 import { useQuery } from '@tanstack/react-query';
 
 export default function Home() {
     const searchParams = useSearchParams();
-    const router = useRouter();
 
     const [filters, setFilters] = useState({
         searchTerm: searchParams.get('search') || '',
         consultationType: searchParams.get('consultation') || 'all',
         sortBy: searchParams.get('sort') || 'fees',
-        specialties: [] as string[], // Add specialties to the filters state
+        specialties: [] as string[], 
     });
 
     const { data: doctors = [], isLoading } = useQuery<Doctor[]>({
