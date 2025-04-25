@@ -3,7 +3,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, ChevronRight } from 'lucide-react'; // Import ChevronRight
+import { Search, ChevronRight } from 'lucide-react'; 
 import { Doctor } from '../types/doctor';
 import { Input } from './ui/input';
 import { getDoctorSuggestions } from '../utils/filterUtils';

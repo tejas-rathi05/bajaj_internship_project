@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Doctor } from "@/types/doctor";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ScrollArea } from "@/components/ui/scroll-area";
